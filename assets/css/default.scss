@@ -9,6 +9,10 @@ ul, ol {
     list-style: none;
 }
 
+p {
+    margin: 0;
+}
+
 a {
     &:hover, &:focus {
         text-decoration: none;
@@ -26,10 +30,12 @@ a {
         width: 100%;
         height: 1300%;
         background: #ba136f;
-        background: -webkit-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
-        background: -o-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
-        background: -moz-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
-        background: linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
+        // #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80
+        // #3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436
+        background: -webkit-linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436);
+        background: -o-linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436);
+        background: -moz-linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436);
+        background: linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436);
     }
     #gnb {
         position: relative;
@@ -64,7 +70,7 @@ a {
     .watch {
         position: relative;
         z-index: 1;
-        .shape {
+        .figure {
             position: relative;
             margin: 100px auto 0;
             width: 670px;
@@ -115,92 +121,276 @@ a {
                     }
                 }
             }
-        }
-    }
-    /*
-    &.mascara-0 {
-        .watch {
-            .hand {
-                //transform: rotate(300deg);
-                li {
-                    &.base {
-                        opacity: 1;
-                    }
+            .shadow {
+                position: absolute;
+                //top: 595px;
+                top: 650px;
+                left: 50%;
+                margin-left: -35px;
+                width: 71px;
+                height: 133px;
+                background-image: url(../images/img_mm_1_shadow.png);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                opacity: 0;
+                -webkit-transition: all .5s;
+                transition: all .5s;
+                &.show {
+                    top: 595px;
+                    opacity: 1;
+                    -webkit-transition-delay: .5s;
+                    transition-delay: .5s;
                 }
             }
-        }
-    }
-    &.mascara-1 {
-        .watch {
-            .hand {
-                //transform: rotate(0);
+            .features {
                 li {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 70px;
+                    opacity: .5;
+                    -webkit-transition: all .2s;
+                    transition: all .2s;
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        color: #fff;
+                        font-family: 'Maven Pro', sans-serif;
+                        font-size: 10px;
+                        line-height: 15px;
+                        -webkit-transition: all .2s;
+                        transition: all .2s;
+                        i {
+                            position: absolute;
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 50%;
+                            background-color: #fff;
+                        }
+                    }
                     &.long {
-                        opacity: 1;
+                        top: -40px;
+                        left: 50%;
+                        margin-left: -35px;
+                        height: 25px;
+                        text-align: center;
+                        a {
+                            i {
+                                left: 50%;
+                                bottom: 0;
+                                margin-left: -3px;
+                            }
+                        }
                     }
-                }
-            }
-        }
-    }
-    &.mascara-2 {
-        .watch {
-            .hand {
-                //transform: rotate(60deg);
-                li {
                     &.volume {
-                        opacity: 1;
+                        top: 230px;
+                        left: 675px;
+                        a {
+                            padding-left: 15px;
+                            i {
+                                left: 0;
+                                top: 50%;
+                                margin-top: -3px;
+                            }
+                        }
                     }
-                }
-            }
-        }
-    }
-    &.mascara-3 {
-        .watch {
-            .hand {
-                //transform: rotate(140deg);
-                li {
                     &.brown {
-                        opacity: 1;
+                        top: 635px;
+                        left: 510px;
+                        a {
+                            padding-left: 15px;
+                            i {
+                                left: 0;
+                                top: 50%;
+                                margin-top: -3px;
+                            }
+                        }
                     }
-                }
-            }
-        }
-    }
-    &.mascara-4 {
-        .watch {
-            .hand {
-                //transform: rotate(240deg);
-                li {
                     &.comb {
-                        opacity: 1;
+                        top: 635px;
+                        left: 90px;
+                        text-align: right;
+                        a {
+                            padding-right: 15px;
+                            i {
+                                right: 0;
+                                top: 50%;
+                                margin-top: -3px;
+                            }
+                        }
                     }
-                }
-            }
-        }
-    }
-    &.mascara-5 {
-        .watch {
-            .hand {
-                //transform: rotate(300deg);
-                li {
                     &.base {
+                        top: 230px;
+                        left: -75px;
+                        text-align: right;
+                        a {
+                            padding-right: 15px;
+                            i {
+                                right: 0;
+                                top: 50%;
+                                margin-top: -3px;
+                            }
+                        }
+                    }
+                    &.selected {
                         opacity: 1;
+                        a {
+                            font-size: 12px;
+                            i {
+                                width: 12px;
+                                height: 12px;
+                            }
+                        }
+                        &.long {
+                            top: -50px;
+                            margin-left: -35px;
+                            height: 35px;
+                            a {
+                                i {
+                                    left: 50%;
+                                    bottom: 0;
+                                    margin-left: -6px;
+                                }
+                            }
+                        }
+                        &.volume {
+                            a {
+                                padding-left: 20px;
+                                i {
+                                    margin-top: -6px;
+                                }
+                            }
+                        }
+                        &.brown {
+                            a {
+                                padding-left: 20px;
+                                i {
+                                    margin-top: -6px;
+                                }
+                            }
+                        }
+                        &.comb {
+                            a {
+                                padding-right: 20px;
+                                i {
+                                    margin-top: -6px;
+                                }
+                            }
+                        }
+                        &.base {
+                            a {
+                                padding-right: 20px;
+                                i {
+                                    margin-top: -6px;
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
-    &.mascara-6 {
-        .watch {
-            .hand {
-                //transform: rotate(360deg);
-                li {
-                    &.long {
-                        opacity: 1;
+}
+
+#content {
+    #products {
+        height: 420px;
+        background-image: url(../images/img_product.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        &:hover {
+            background-image: url(../images/img_product_on.jpg);
+        }
+    }
+    #specialities {
+        > .container {
+            width: 100%;
+            max-width: 1920px;
+            > .row {
+                > div {
+                    padding-left: 0;
+                    padding-right: 0;
+                    .special {
+                        width: 100%;
+                        height: 485px;
+                        &.special-1 {
+                            background-image: url(../images/img_endmineral.jpg);
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            background-size: cover;
+                        }
+                        &.special-4 {
+                            background-image: url(../images/img_spirit.jpg);
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            background-size: cover;
+                        }
+                        &.special-2,
+                        &.special-3 {
+                            position: relative;
+                            background-color: #f6f6f6;
+                        }
+                        &.special-2 {
+                            p {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                margin-left: -180px;
+                                margin-top: -139px;
+                                width: 360px;
+                                height: 277px;
+                            }
+                        }
+                        &.special-3 {
+                            p {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                margin-left: -168px;
+                                margin-top: -138px;
+                                width: 336px;
+                                height: 276px;
+                            }
+                        }
                     }
                 }
             }
         }
     }
-    */
+    #video {
+        height: 600px;
+        background-image: url(../images/thumb_video.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+    #events {
+        height: 664px;
+        background-image: url(../images/img_events.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+    #stores {
+        height: 90px;
+        background-color: #f5f5f5;
+        p {
+            padding-top: 32px;
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+#footer {
+    height: 130px;
+    p {
+        padding-top: 37px;
+        img {
+            margin: 0 auto;
+        }
+    }
 }

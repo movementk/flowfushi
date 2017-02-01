@@ -7,99 +7,16 @@ ul, ol {
   padding: 0;
   list-style: none; }
 
+p {
+  margin: 0; }
+
 a:hover, a:focus {
   text-decoration: none; }
 
 #header {
   position: relative;
   overflow: hidden;
-  height: 1000px;
-  /*
-  &.mascara-0 {
-      .watch {
-          .hand {
-              //transform: rotate(300deg);
-              li {
-                  &.base {
-                      opacity: 1;
-                  }
-              }
-          }
-      }
-  }
-  &.mascara-1 {
-      .watch {
-          .hand {
-              //transform: rotate(0);
-              li {
-                  &.long {
-                      opacity: 1;
-                  }
-              }
-          }
-      }
-  }
-  &.mascara-2 {
-      .watch {
-          .hand {
-              //transform: rotate(60deg);
-              li {
-                  &.volume {
-                      opacity: 1;
-                  }
-              }
-          }
-      }
-  }
-  &.mascara-3 {
-      .watch {
-          .hand {
-              //transform: rotate(140deg);
-              li {
-                  &.brown {
-                      opacity: 1;
-                  }
-              }
-          }
-      }
-  }
-  &.mascara-4 {
-      .watch {
-          .hand {
-              //transform: rotate(240deg);
-              li {
-                  &.comb {
-                      opacity: 1;
-                  }
-              }
-          }
-      }
-  }
-  &.mascara-5 {
-      .watch {
-          .hand {
-              //transform: rotate(300deg);
-              li {
-                  &.base {
-                      opacity: 1;
-                  }
-              }
-          }
-      }
-  }
-  &.mascara-6 {
-      .watch {
-          .hand {
-              //transform: rotate(360deg);
-              li {
-                  &.long {
-                      opacity: 1;
-                  }
-              }
-          }
-      }
-  }
-  */ }
+  height: 1000px; }
   #header .back {
     position: absolute;
     z-index: 0;
@@ -107,10 +24,10 @@ a:hover, a:focus {
     width: 100%;
     height: 1300%;
     background: #ba136f;
-    background: -webkit-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
-    background: -o-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
-    background: -moz-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
-    background: linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436); }
+    background: -webkit-linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436);
+    background: -o-linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436);
+    background: -moz-linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436);
+    background: linear-gradient(#3640b9, #951d80, #b9126e, #c64436, #cb5621, #deae6b, #e6d48a, #77b4c6, #4ea8dc, #3c5cc2, #3640b9, #951d80, #b9126e, #c64436); }
   #header #gnb {
     position: relative;
     z-index: 1; }
@@ -137,16 +54,16 @@ a:hover, a:focus {
   #header .watch {
     position: relative;
     z-index: 1; }
-    #header .watch .shape {
+    #header .watch .figure {
       position: relative;
       margin: 100px auto 0;
       width: 670px;
       height: 670px; }
-      #header .watch .shape .circle {
+      #header .watch .figure .circle {
         opacity: .5; }
-        #header .watch .shape .circle img {
+        #header .watch .figure .circle img {
           display: block; }
-      #header .watch .shape .hand {
+      #header .watch .figure .hand {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -156,7 +73,7 @@ a:hover, a:focus {
         height: 530px;
         -webkit-transition: transform 1s;
         transition: transform 1s; }
-        #header .watch .shape .hand li {
+        #header .watch .figure .hand li {
           position: absolute;
           top: 0;
           left: 0;
@@ -166,17 +83,211 @@ a:hover, a:focus {
           background-position: 50% 50%;
           opacity: 0;
           transition: opacity 2s; }
-          #header .watch .shape .hand li.long {
+          #header .watch .figure .hand li.long {
             background-image: url(../images/img_mm_1.png); }
-          #header .watch .shape .hand li.volume {
+          #header .watch .figure .hand li.volume {
             background-image: url(../images/img_mm_2_r.png); }
-          #header .watch .shape .hand li.brown {
+          #header .watch .figure .hand li.brown {
             background-image: url(../images/img_mm_3_r.png); }
-          #header .watch .shape .hand li.comb {
+          #header .watch .figure .hand li.comb {
             background-image: url(../images/img_mm_4.png); }
-          #header .watch .shape .hand li.base {
+          #header .watch .figure .hand li.base {
             background-image: url(../images/img_mm_5.png); }
-          #header .watch .shape .hand li.selected {
+          #header .watch .figure .hand li.selected {
             opacity: 1; }
+      #header .watch .figure .shadow {
+        position: absolute;
+        top: 650px;
+        left: 50%;
+        margin-left: -35px;
+        width: 71px;
+        height: 133px;
+        background-image: url(../images/img_mm_1_shadow.png);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        opacity: 0;
+        -webkit-transition: all .5s;
+        transition: all .5s; }
+        #header .watch .figure .shadow.show {
+          top: 595px;
+          opacity: 1;
+          -webkit-transition-delay: .5s;
+          transition-delay: .5s; }
+      #header .watch .figure .features li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70px;
+        opacity: .5;
+        -webkit-transition: all .2s;
+        transition: all .2s; }
+        #header .watch .figure .features li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: #fff;
+          font-family: 'Maven Pro', sans-serif;
+          font-size: 10px;
+          line-height: 15px;
+          -webkit-transition: all .2s;
+          transition: all .2s; }
+          #header .watch .figure .features li a i {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #fff; }
+        #header .watch .figure .features li.long {
+          top: -40px;
+          left: 50%;
+          margin-left: -35px;
+          height: 25px;
+          text-align: center; }
+          #header .watch .figure .features li.long a i {
+            left: 50%;
+            bottom: 0;
+            margin-left: -3px; }
+        #header .watch .figure .features li.volume {
+          top: 230px;
+          left: 675px; }
+          #header .watch .figure .features li.volume a {
+            padding-left: 15px; }
+            #header .watch .figure .features li.volume a i {
+              left: 0;
+              top: 50%;
+              margin-top: -3px; }
+        #header .watch .figure .features li.brown {
+          top: 635px;
+          left: 510px; }
+          #header .watch .figure .features li.brown a {
+            padding-left: 15px; }
+            #header .watch .figure .features li.brown a i {
+              left: 0;
+              top: 50%;
+              margin-top: -3px; }
+        #header .watch .figure .features li.comb {
+          top: 635px;
+          left: 90px;
+          text-align: right; }
+          #header .watch .figure .features li.comb a {
+            padding-right: 15px; }
+            #header .watch .figure .features li.comb a i {
+              right: 0;
+              top: 50%;
+              margin-top: -3px; }
+        #header .watch .figure .features li.base {
+          top: 230px;
+          left: -75px;
+          text-align: right; }
+          #header .watch .figure .features li.base a {
+            padding-right: 15px; }
+            #header .watch .figure .features li.base a i {
+              right: 0;
+              top: 50%;
+              margin-top: -3px; }
+        #header .watch .figure .features li.selected {
+          opacity: 1; }
+          #header .watch .figure .features li.selected a {
+            font-size: 12px; }
+            #header .watch .figure .features li.selected a i {
+              width: 12px;
+              height: 12px; }
+          #header .watch .figure .features li.selected.long {
+            top: -50px;
+            margin-left: -35px;
+            height: 35px; }
+            #header .watch .figure .features li.selected.long a i {
+              left: 50%;
+              bottom: 0;
+              margin-left: -6px; }
+          #header .watch .figure .features li.selected.volume a {
+            padding-left: 20px; }
+            #header .watch .figure .features li.selected.volume a i {
+              margin-top: -6px; }
+          #header .watch .figure .features li.selected.brown a {
+            padding-left: 20px; }
+            #header .watch .figure .features li.selected.brown a i {
+              margin-top: -6px; }
+          #header .watch .figure .features li.selected.comb a {
+            padding-right: 20px; }
+            #header .watch .figure .features li.selected.comb a i {
+              margin-top: -6px; }
+          #header .watch .figure .features li.selected.base a {
+            padding-right: 20px; }
+            #header .watch .figure .features li.selected.base a i {
+              margin-top: -6px; }
+
+#content #products {
+  height: 420px;
+  background-image: url(../images/img_product.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover; }
+  #content #products:hover {
+    background-image: url(../images/img_product_on.jpg); }
+#content #specialities > .container {
+  width: 100%;
+  max-width: 1920px; }
+  #content #specialities > .container > .row > div {
+    padding-left: 0;
+    padding-right: 0; }
+    #content #specialities > .container > .row > div .special {
+      width: 100%;
+      height: 485px; }
+      #content #specialities > .container > .row > div .special.special-1 {
+        background-image: url(../images/img_endmineral.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover; }
+      #content #specialities > .container > .row > div .special.special-4 {
+        background-image: url(../images/img_spirit.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover; }
+      #content #specialities > .container > .row > div .special.special-2, #content #specialities > .container > .row > div .special.special-3 {
+        position: relative;
+        background-color: #f6f6f6; }
+      #content #specialities > .container > .row > div .special.special-2 p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -180px;
+        margin-top: -139px;
+        width: 360px;
+        height: 277px; }
+      #content #specialities > .container > .row > div .special.special-3 p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -168px;
+        margin-top: -138px;
+        width: 336px;
+        height: 276px; }
+#content #video {
+  height: 600px;
+  background-image: url(../images/thumb_video.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover; }
+#content #events {
+  height: 664px;
+  background-image: url(../images/img_events.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover; }
+#content #stores {
+  height: 90px;
+  background-color: #f5f5f5; }
+  #content #stores p {
+    padding-top: 32px; }
+    #content #stores p img {
+      margin: 0 auto; }
+
+#footer {
+  height: 130px; }
+  #footer p {
+    padding-top: 37px; }
+    #footer p img {
+      margin: 0 auto; }
 
 /*# sourceMappingURL=default.css.map */

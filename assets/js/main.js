@@ -1,42 +1,46 @@
 var Mascara = (function($) {
     
     var rotateCount = 0;
-    var typeCount = 5;
-    var typeNow = 1;
+    var typeCount = 5; // 마스카라의 개수
+    var typeNow = 1; // 현재 선택된 마스카라
     var changing = false;
     var changeDelay = 2000;
     var $container = $('#header');
     var $back = $container.find('.back:eq(0)');
     var $hand = $container.find('.watch:eq(0) .hand:eq(0)');
+    var $shadow = $container.find('.watch:eq(0) .shadow:eq(0)');
+    var $features = $container.find('.watch:eq(0) .features:eq(0)');
+    var rollDelay = 2000;
+    var rollTimer = null;
     
     // 이전 마스카라
     function prevItem() {
-        //console.log('prev mascara');
-        changing = true;
-        if (changing) {
-            rotateCount--;
-            typeNow--;
-            if (typeNow < 0) typeNow = typeCount;
-            _showItem();
+        if (changing == false) {
+            changing = true;
+            if (changing) {
+                rotateCount--;
+                typeNow--;
+                if (typeNow < 0) typeNow = typeCount;
+                _showItem();
+            }
         }
     };
     
     // 다음 마스카라
     function nextItem() {
-        //console.log('next mascara');
-        changing = true;
-        if (changing) {
-            rotateCount++;
-            typeNow++;
-            if (typeNow > typeCount + 1) typeNow = 1;
-            _showItem();
+        if (changing == false) {
+            changing = true;
+            if (changing) {
+                rotateCount++;
+                typeNow++;
+                if (typeNow > typeCount + 1) typeNow = 1;
+                _showItem();
+            }
         }
     };
     
     // 마스카라 보이기
     function _showItem() {
-        //$container.removeClass('mascara-0 mascara-1 mascara-2 mascara-3 mascara-4 mascara-5 mascara-6');
-        //$container.addClass('mascara-'+typeNow);
         
         // 마스카라 보이기
         $hand.find('li.selected').removeClass('selected');
@@ -48,25 +52,45 @@ var Mascara = (function($) {
             $hand.find('li').eq(0).addClass('selected');
         }
         
+        // 마스카라 그림자
+        if (typeNow == 1 || typeNow == typeCount + 1) {
+            $shadow.addClass('show');
+        } else {
+            $shadow.removeClass('show');
+        }
+        
         // 마스카라 회전
         _rotateItem();
         
+        // 특징 선택
+        $features.find('li.selected').removeClass('selected');
+        $features.find('li').eq(typeNow-1).addClass('selected');
+        if (typeNow == 0) {
+            $features.find('li').eq(typeCount-1).addClass('selected');
+        }
+        if (typeNow == typeCount + 1) {
+            $features.find('li').eq(0).addClass('selected');
+        }
+        
         // 배경 변화
-        $back.stop().animate({ 'top' : -200*typeNow+'%' }, changeDelay, function() {
+        $back.stop().animate({ 'top' : -200*typeNow+'%' }, changeDelay, 'easeOutExpo', function() {
             if (typeNow == 0) {
-                //$container.removeClass('mascara-0 mascara-1 mascara-2 mascara-3 mascara-4 mascara-5 mascara-6');
-                //$container.addClass('mascara-5');
                 $(this).css('top', '-1000%');
                 typeNow = 5;
             }
             if (typeNow == typeCount + 1) {
-                //$container.removeClass('mascara-0 mascara-1 mascara-2 mascara-3 mascara-4 mascara-5 mascara-6');
-                //$container.addClass('mascara-1');
                 $(this).css('top', '-200%');
                 typeNow = 1;
-            }
+            }            
             changing = false;
         });
+    }
+    
+    // 마스카라 보이기
+    function showItem(n) {
+        typeNow = n + 1;
+        rotateCount = n;
+        _showItem();
     }
     
     // 마스카라 회전
@@ -113,10 +137,33 @@ var Mascara = (function($) {
         return changing;
     }
     
+    // 자동롤링
+    function playRoll() {
+        rollTimer = window.setTimeout(function() {
+            nextItem();
+            playRoll();
+        }, rollDelay + changeDelay);
+    }
+    
+    // 초기화
+    function init() {
+        playRoll();
+    }
+    
+    // 롤링 정지
+    function stopRoll() {
+        window.clearTimeout(rollTimer);
+        rollTimer = null;
+    }
+    
+    init();
+    
     return {
         prev: prevItem,
         next: nextItem,
-        getChanging: isChanging
+        stop: stopRoll,
+        play: playRoll,
+        show: showItem
     };
     
 })(jQuery);
@@ -125,20 +172,33 @@ var Mascara = (function($) {
 
 (function($) {
     
-    $('#header').on('mousewheel', function(event) {
-        //console.log(event.deltaX, event.deltaY, event.deltaFactor);
-        //console.log(Mascara.getChanging());
+    // 마우스 휠에 반응
+    $(document).on('mousewheel', '#header .watch:eq(0) .figure:eq(0)', function(event) {
         if (event.deltaY == 1) {
-            if (Mascara.getChanging() == false) {
-                Mascara.prev();
-            }
+            Mascara.prev();
         }
         if (event.deltaY == -1) {
-            if (Mascara.getChanging() == false) {
-                Mascara.next();
-            }
+            Mascara.next();
         }
         event.preventDefault();
     });
+    
+    // 마우스 오버 시 - 롤링 정지
+    $(document).on('mouseenter', '#header .watch:eq(0) .figure:eq(0)', function() {
+        Mascara.stop();
+    });
+    
+    // 마우스 아웃 시 - 롤링 정지
+    $(document).on('mouseleave', '#header .watch:eq(0) .figure:eq(0)', function() {
+        Mascara.play();
+    });
+    
+    // 기능 마우스 클릭 시
+    /*
+    $(document).on('click', '#header .watch:eq(0) .figure:eq(0) .features:eq(0) li a', function(event) {
+        Mascara.show($(this).parent().index());
+        event.preventDefault();
+    });
+    */
     
 })(jQuery);
