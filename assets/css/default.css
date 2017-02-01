@@ -1,0 +1,182 @@
+body {
+  font-family: 'Comfortaa', cursive;
+  font-size: 11px; }
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+a:hover, a:focus {
+  text-decoration: none; }
+
+#header {
+  position: relative;
+  overflow: hidden;
+  height: 1000px;
+  /*
+  &.mascara-0 {
+      .watch {
+          .hand {
+              //transform: rotate(300deg);
+              li {
+                  &.base {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+  &.mascara-1 {
+      .watch {
+          .hand {
+              //transform: rotate(0);
+              li {
+                  &.long {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+  &.mascara-2 {
+      .watch {
+          .hand {
+              //transform: rotate(60deg);
+              li {
+                  &.volume {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+  &.mascara-3 {
+      .watch {
+          .hand {
+              //transform: rotate(140deg);
+              li {
+                  &.brown {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+  &.mascara-4 {
+      .watch {
+          .hand {
+              //transform: rotate(240deg);
+              li {
+                  &.comb {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+  &.mascara-5 {
+      .watch {
+          .hand {
+              //transform: rotate(300deg);
+              li {
+                  &.base {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+  &.mascara-6 {
+      .watch {
+          .hand {
+              //transform: rotate(360deg);
+              li {
+                  &.long {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+  */ }
+  #header .back {
+    position: absolute;
+    z-index: 0;
+    top: -200%;
+    width: 100%;
+    height: 1300%;
+    background: #ba136f;
+    background: -webkit-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
+    background: -o-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
+    background: -moz-linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436);
+    background: linear-gradient(#3640b9, #951e82, #ba136f, #c64436, #cb5621, #deaf6b, #e6d48a, #77b4c7, #4ea8dc, #3c5cc1, #3640b9, #951e82, #ba136f, #c64436); }
+  #header #gnb {
+    position: relative;
+    z-index: 1; }
+    #header #gnb h1 {
+      margin: 35px auto 40px;
+      width: 125px;
+      height: 57px; }
+    #header #gnb .menu {
+      text-align: center; }
+      #header #gnb .menu ul {
+        display: inline-block; }
+        #header #gnb .menu ul li {
+          display: inline; }
+          #header #gnb .menu ul li a {
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: #000;
+            font-weight: 700;
+            transition: all .3s;
+            letter-spacing: .5px; }
+            #header #gnb .menu ul li a:hover, #header #gnb .menu ul li a:focus {
+              text-decoration: underline; }
+  #header .watch {
+    position: relative;
+    z-index: 1; }
+    #header .watch .shape {
+      position: relative;
+      margin: 100px auto 0;
+      width: 670px;
+      height: 670px; }
+      #header .watch .shape .circle {
+        opacity: .5; }
+        #header .watch .shape .circle img {
+          display: block; }
+      #header .watch .shape .hand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -265px;
+        margin-left: -45px;
+        width: 90px;
+        height: 530px;
+        -webkit-transition: transform 1s;
+        transition: transform 1s; }
+        #header .watch .shape .hand li {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          opacity: 0;
+          transition: opacity 2s; }
+          #header .watch .shape .hand li.long {
+            background-image: url(../images/img_mm_1.png); }
+          #header .watch .shape .hand li.volume {
+            background-image: url(../images/img_mm_2_r.png); }
+          #header .watch .shape .hand li.brown {
+            background-image: url(../images/img_mm_3_r.png); }
+          #header .watch .shape .hand li.comb {
+            background-image: url(../images/img_mm_4.png); }
+          #header .watch .shape .hand li.base {
+            background-image: url(../images/img_mm_5.png); }
+          #header .watch .shape .hand li.selected {
+            opacity: 1; }
+
+/*# sourceMappingURL=default.css.map */
